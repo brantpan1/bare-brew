@@ -40,7 +40,6 @@ export default function HorizontalCarousel() {
             style={{
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
-              WebkitScrollbar: { display: 'none' },
             }}
           >
             {/* Cards Container */}
