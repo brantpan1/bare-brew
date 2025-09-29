@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Footer() {
   const footerLinks = {
@@ -18,12 +19,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-20">
           {/* Brand Column */}
           <div className="md:col-span-1">
-            <h2
-              className="text-3xl font-bold mb-4"
-              style={{ fontFamily: 'var(--font-baskerville), serif' }}
-            >
-              BOBA
-            </h2>
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              className="mb-4 object-cover"
+              style={{ objectFit: 'contain' }}
+              priority
+              width={100}
+              height="0"
+            />
             <p className="text-white/70 text-sm">
               Brewed with care,
               <br />
@@ -107,7 +111,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/50 text-xs">
-            © 2024 BOBA. All rights reserved.
+            © 2024 Bare Brew. All rights reserved.
           </p>
 
           <div className="flex gap-6">

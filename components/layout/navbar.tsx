@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { User, ShoppingCart } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Navbar() {
   const navItems = ['Protein', 'Boba', 'Mixers']
@@ -18,16 +19,23 @@ export default function Navbar() {
         initial={{ y: -200, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="w-[90vw] mx-auto bg-white/95 backdrop-blur-md rounded-2xl px-6 py-4 flex items-center justify-between shadow-lg"
+        className="relative w-[90vw] mx-auto bg-white/95 backdrop-blur-md rounded-2xl px-6 py-4 flex items-center justify-between shadow-lg" // +relative
         style={{ fontFamily: 'var(--font-baskerville), serif' }}
       >
-        {/* Logo */}
+        {/* Logo (left) */}
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-lg font-bold cursor-pointer"
+          className="relative h-15 w-30 text-lg font-bold cursor-pointer" // +relative +size
         >
-          BOBA
+          <Image
+            src="/images/logo.png"
+            alt="logo"
+            style={{ objectFit: 'contain' }}
+            fill
+            priority
+            sizes="100vw"
+          />
         </motion.div>
 
         {/* Center Navigation */}
