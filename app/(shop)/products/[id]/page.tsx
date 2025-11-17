@@ -183,13 +183,16 @@ function ProductGallery({ images }: { images: string[] }) {
   )
 }
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  // TODO: Fetch your product data here based on params.id
-  // const product = await fetchProduct(params.id)
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params
 
   // Mock data for now
   const product = {
-    id: params.id,
+    id: id,
     title: 'Product Title',
     price: 25,
     rating: 5,
