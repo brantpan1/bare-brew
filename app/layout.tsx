@@ -64,11 +64,12 @@ export default function RootLayout({
         className={`${inter.className} antialiased min-h-screen bg-gray-50`}
       >
         <Navbar />
+
         <div className="relative flex min-h-screen flex-col">
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
-        
+
         <Toaster
           position="bottom-right"
           toastOptions={{
@@ -78,7 +79,7 @@ export default function RootLayout({
           richColors
           closeButton
         />
-        
+
         {/* Dev indicator */}
         {process.env.NODE_ENV === 'development' && (
           <div className="fixed bottom-4 left-4 z-50 rounded-full bg-purple-600 px-2 py-1 text-xs font-medium text-white">
